@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "930399049775",
+    "firebase_url": "https://oman-2020.firebaseio.com",
+    "project_id": "oman-2020",
+    "storage_bucket": "oman-2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930399049775:android:408314f2e1817a8762ceda",
+        "android_client_info": {
+          "package_name": "com.example.owa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "930399049775-9vj09ot0aphj3iv1nh69iv4qpp5pprrp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.owa",
+            "certificate_hash": "2cb690d832b7134b4592bef9d6e152f66f8d3f8f"
+          }
+        },
+        {
+          "client_id": "930399049775-n5hvsu3s9lmktdql83t14duvdv8ep8g1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2QD6uH_dRJIHZoW4xBnO3Dh0_UXThMMc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "930399049775-n5hvsu3s9lmktdql83t14duvdv8ep8g1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

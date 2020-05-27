@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".payment">
+
+    <ImageView
+        android:id="@+id/img_pay"
+        android:layout_width="match_parent"
+        android:layout_height="123dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <TextView
+            android:id="@+id/et_useremail2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:hint="User Email"
+            android:inputType="date"
+            android:textAlignment="center"
+            android:textColor="@color/violit" />
+
+        <EditText
+            android:id="@+id/et_card"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:hint="Your Bank Card Number"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textColor="@color/violit" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnpay"
+                android:layout_width="150dp"
+                android:layout_height="58dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/btn"
+                android:text="Pay" />
+
+            <Button
+                android:id="@+id/btncancel2"
+                android:layout_width="150dp"
+                android:layout_height="58dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/btn"
+                android:text="Cancel" />
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

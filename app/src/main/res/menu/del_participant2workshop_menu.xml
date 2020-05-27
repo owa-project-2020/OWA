@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <item
+        android:id="@+id/adminMain"
+        android:title="Admin Home"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/addAds"
+        android:title="Add Advertisements"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/addNews"
+        android:title="Add News"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/modify"
+        android:title="Update or Delete Workshop"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/addworkshps"
+        android:title="Add Workshops"
+        app:showAsAction="never" />
+
+    <!--<item android:id="@+id/del_participant"
+        android:title="delelete registred user"
+        app:showAsAction="never"/>-->
+
+    <item
+        android:id="@+id/exit"
+        android:title="Logout"
+        app:showAsAction="never" />
+
+</menu>

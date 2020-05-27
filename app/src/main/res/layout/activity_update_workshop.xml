@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".update_workshop">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:src="@drawable/updatea" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/wname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="workshop Name" />
+
+        <EditText
+            android:id="@+id/et_wstrtTime"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:hint="Start time"
+            android:inputType="time"
+            android:textAlignment="center"
+            android:textColor="@color/violit" />
+
+        <EditText
+            android:id="@+id/et_wendTime"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:hint="end time"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textColor="@color/violit" />
+
+        <EditText
+            android:id="@+id/et_wdate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:clickable="true"
+            android:focusable="false"
+            android:hint="Workshop Date"
+            android:inputType="date"
+            android:textAlignment="center"
+            android:textColor="@color/violit" />
+
+        <Button
+            android:id="@+id/btnUpdate"
+            android:layout_width="150dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="70dp"
+            android:background="@drawable/updatea" />
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="150dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/deletea" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    tools:context=".Register_workshop">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <ImageView
+            android:id="@+id/workshop_register"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            app:srcCompat="@drawable/workadd" />
+
+        <EditText
+            android:id="@+id/et_wname"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:hint="Workshop Name"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textColor="@color/violit" />
+
+        <EditText
+            android:id="@+id/et_category"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:hint="Workshop Category"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textColor="@color/violit" />
+
+        <EditText
+            android:id="@+id/et_wstrtTime"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:hint="Start time"
+            android:inputType="time"
+            android:textAlignment="center"
+            android:textColor="@color/violit" />
+
+        <EditText
+            android:id="@+id/et_wendTime"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:hint="end time"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textColor="@color/violit" />
+
+        <EditText
+            android:id="@+id/et_wdate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:clickable="true"
+            android:focusable="false"
+            android:hint="Workshop Date"
+            android:inputType="date"
+            android:textAlignment="center"
+            android:textColor="@color/violit" />
+
+        <EditText
+            android:id="@+id/et_wRoomNo"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:hint="Room No"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/violit" />
+
+        <EditText
+            android:id="@+id/et_wFee"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:hint="Workshop Price"
+            android:inputType="numberDecimal"
+            android:textAlignment="center"
+            android:textColor="@color/violit" />
+
+        <EditText
+            android:id="@+id/et_wAge"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:hint="age allowed"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/violit" />
+
+        <EditText
+            android:id="@+id/et_wSeats"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:hint="noumber of avilable Seats"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/violit" />
+
+        <ImageView
+            android:id="@+id/image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="170dp" />
+
+        <EditText
+            android:id="@+id/txtdata"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:hint="Image Data"
+            android:inputType="text"
+            android:textAlignment="center"
+            android:textColor="@color/violit" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btnbrowse"
+                android:layout_width="150dp"
+                android:layout_height="58dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/addbtn" />
+
+            <Button
+                android:id="@+id/btnupload"
+                android:layout_width="150dp"
+                android:layout_height="58dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/upload" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>

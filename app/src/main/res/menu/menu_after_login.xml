@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--    <item android:id="@+id/main"-->
+    <!--        android:icon="@drawable/menu_home"-->
+    <!--        android:title="menu"-->
+    <!--        app:showAsAction="withText"/>-->
+
+    <item
+        android:id="@+id/reset"
+        android:icon="@drawable/resetpassword"
+        android:title="Reset Password"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/register"
+        android:title="Logout"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/feed"
+        android:icon="@drawable/register"
+        android:title="Feedback"
+        app:showAsAction="never" />
+
+
+</menu>

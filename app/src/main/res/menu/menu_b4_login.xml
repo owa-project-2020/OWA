@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!--    <item android:id="@+id/main"-->
+    <!--        android:icon="@drawable/menu_home"-->
+    <!--        android:title="menu"-->
+    <!--        app:showAsAction="withText"/>-->
+
+    <item
+        android:id="@+id/Login"
+        android:icon="@drawable/login"
+        android:title="Login"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/register"
+        android:icon="@drawable/register"
+        android:title="Register"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/AdminLogin"
+        android:icon="@drawable/admin"
+        android:title="Login as Admin"
+        app:showAsAction="never" />
+
+</menu>

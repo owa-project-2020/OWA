@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".userRegiseterToWorkshop">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <TextView
+            android:id="@+id/et_wname"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:hint="Workshop Name"
+            android:textAlignment="center"
+            android:textColor="@color/violit" />
+
+        <TextView
+            android:id="@+id/et_wdate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:clickable="true"
+            android:focusable="false"
+            android:hint="Workshop Date"
+            android:textAlignment="center"
+            android:textColor="@color/violit" />
+
+        <TextView
+            android:id="@+id/et_wprice"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:clickable="true"
+            android:focusable="false"
+            android:hint="Workshop Price"
+            android:textAlignment="center"
+            android:textColor="@color/violit" />
+
+        <EditText
+            android:id="@+id/et_uname"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:hint="Your Name"
+            android:inputType="textPersonName"
+            android:textAlignment="center"
+            android:textColor="@color/pink" />
+
+        <EditText
+            android:id="@+id/et_birthDate"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:clickable="true"
+            android:focusable="false"
+            android:hint="Birth Date"
+            android:inputType="date"
+            android:textAlignment="center"
+            android:textColor="@color/pink" />
+
+        <EditText
+            android:id="@+id/et_umaile"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="7dp"
+            android:hint="Your e-mail"
+            android:inputType="textEmailAddress"
+            android:textAlignment="center"
+            android:textColor="@color/pink" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="150dp"
+                android:layout_height="58dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="20dp"
+                android:text="cancel" />
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="150dp"
+                android:layout_height="58dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="register" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
