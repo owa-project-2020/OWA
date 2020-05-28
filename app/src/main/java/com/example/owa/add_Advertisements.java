@@ -86,7 +86,6 @@ public class add_Advertisements extends AppCompatActivity {
             }
         }
     }
-
     public String GetFileExtension(Uri uri) {
 
         ContentResolver contentResolver = getContentResolver();
@@ -94,14 +93,14 @@ public class add_Advertisements extends AppCompatActivity {
         return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri));
 
     }
-
     public void UploadImage() {
 
         if (FilePathUri != null) {
-            final StorageReference storageReference2 = storageReference.child(System.currentTimeMillis() + "." + GetFileExtension(FilePathUri));
-            storageReference2.getDownloadUrl()
-                    .addOnSuccessListener(new OnSuccessListener<Uri>() {
+
+            StorageReference storageReference2 = storageReference.child(System.currentTimeMillis() + "." + GetFileExtension(FilePathUri));
+            storageReference2.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
+
                         public void onSuccess(Uri uri) {
                             String TempImageName = advCategory.getText().toString().trim();
                             Toast.makeText(getApplicationContext(), "Image Uploaded Successfully ", Toast.LENGTH_LONG).show();

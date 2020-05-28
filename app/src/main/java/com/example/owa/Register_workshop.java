@@ -83,8 +83,8 @@ public class Register_workshop extends AppCompatActivity {
         workAge = findViewById(R.id.et_wAge);
         workSeats = findViewById(R.id.et_wSeats);
         wv = new workshopsView();
-        btnbrowse.setOnClickListener(
-                new View.OnClickListener() {
+
+        btnbrowse.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Intent intent = new Intent();
@@ -93,6 +93,7 @@ public class Register_workshop extends AppCompatActivity {
                         startActivityForResult(Intent.createChooser(intent, "Select Image"), Image_Request_Code);
                     }
                 });
+
         btnupload.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -118,7 +119,7 @@ public class Register_workshop extends AppCompatActivity {
                 wv.setWage(workAge.getText().toString().trim());
                 wv.setwNoSeats(workSeats.getText().toString().trim());
 
-                databaseReference = fd.getReference();
+                myRef = fd.getReference();
                 newRef.setValue(wv);
                 /*DatabaseReference newRef = ref.child("Person").push();
                 newRef.setValue(person);*/
@@ -198,7 +199,6 @@ public class Register_workshop extends AppCompatActivity {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), FilePathUri);
                 imgview.setImageBitmap(bitmap);
             } catch (IOException e) {
-
                 e.printStackTrace();
             }
         }

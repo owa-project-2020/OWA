@@ -29,9 +29,6 @@ public class advertisementsAdapter extends RecyclerView.Adapter<advertisementsAd
         //item1=ad;
     }
 
-    public advertisementsAdapter(int ads_item, ArrayList<uploadinfo> mUploads) {
-    }
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -64,9 +61,9 @@ public class advertisementsAdapter extends RecyclerView.Adapter<advertisementsAd
             return adsList.size();
     }
 
-    public long getItemid(int position) {
+    /*public long getItemid(int position) {
         return position;
-    }
+    }*/
 
     public void update(ArrayList<uploadinfo> items) {
         adsList = items;
