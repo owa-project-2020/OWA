@@ -24,20 +24,21 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
-
 
 public class add_Advertisements extends AppCompatActivity {
 
     Uri FilePathUri;
     StorageReference storageReference;
+    FirebaseDatabase fd;
     DatabaseReference databaseReference;
     int Image_Request_Code = 7;
-    String adsCategory;
-    EditText advCategory;
-    ImageView AdsImage;
+    String Adcategory;
     Button btnbrowse, btnupload;
+    EditText category;
+    ImageView imgview;
 
 
     @Override
@@ -45,13 +46,16 @@ public class add_Advertisements extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__advertisements);
 
-        storageReference = FirebaseStorage.getInstance().getReference("Advertisements Images");
-        databaseReference = FirebaseDatabase.getInstance().getReference("Ads");
+        fd = FirebaseDatabase.getInstance();
+        //newRef = fd.getReference("News Details");
+
+        storageReference = FirebaseStorage.getInstance().getReference("Advertisementds Images");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("ADS").push();
 
         btnbrowse = findViewById(R.id.btnbrowse);
         btnupload = findViewById(R.id.btnupload);
-        advCategory = findViewById(R.id.txtCategory);
-        AdsImage = findViewById(R.id.image_view);
+        category = findViewById(R.id.txtCategory);
+        imgview = findViewById(R.id.image_view);
 
         btnbrowse.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +63,8 @@ public class add_Advertisements extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Select News Image"), Image_Request_Code);
+                startActivityForResult(Intent.createChooser(intent, "Select Image"), Image_Request_Code);
+
             }
         });
         btnupload.setOnClickListener(new View.OnClickListener() {
@@ -69,7 +74,6 @@ public class add_Advertisements extends AppCompatActivity {
             }
         });
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -78,14 +82,17 @@ public class add_Advertisements extends AppCompatActivity {
         if (requestCode == Image_Request_Code && resultCode == RESULT_OK && data != null && data.getData() != null) {
 
             FilePathUri = data.getData();
+
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), FilePathUri);
-                AdsImage.setImageBitmap(bitmap);
+                imgview.setImageBitmap(bitmap);
             } catch (IOException e) {
+
                 e.printStackTrace();
             }
         }
     }
+
     public String GetFileExtension(Uri uri) {
 
         ContentResolver contentResolver = getContentResolver();
@@ -93,26 +100,28 @@ public class add_Advertisements extends AppCompatActivity {
         return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri));
 
     }
+
     public void UploadImage() {
 
         if (FilePathUri != null) {
 
             StorageReference storageReference2 = storageReference.child(System.currentTimeMillis() + "." + GetFileExtension(FilePathUri));
-            storageReference2.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                        @Override
+            storageReference2.putFile(FilePathUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
 
-                        public void onSuccess(Uri uri) {
-                            String TempImageName = advCategory.getText().toString().trim();
-                            Toast.makeText(getApplicationContext(), "Image Uploaded Successfully ", Toast.LENGTH_LONG).show();
-                            @SuppressWarnings("VisibleForTests")
-                            uploadinfo imageUploadInfo = new uploadinfo(TempImageName, uri.toString());
-                            String ImageUploadId = databaseReference.push().getKey();
-                            databaseReference.child(ImageUploadId).setValue(imageUploadInfo);
-                        }
-                    });
+                    String TempImageName = category.getText().toString().trim();
+
+                    Toast.makeText(getApplicationContext(), "News Uploaded Successfully ", Toast.LENGTH_LONG).show();
+                    @SuppressWarnings("VisibleForTests")
+                    uploadinfo imageUploadInfo = new uploadinfo(TempImageName, taskSnapshot.getUploadSessionUri().toString());
+                    String ImageUploadId = databaseReference.push().getKey();
+                    databaseReference.child(ImageUploadId).setValue(imageUploadInfo);
+                }
+            });
         } else {
 
-            Toast.makeText(add_Advertisements.this, "Please Select Image or Add Image Name", Toast.LENGTH_LONG).show();
+            Toast.makeText(add_Advertisements.this, "Please Select Image or Add Image Ads", Toast.LENGTH_LONG).show();
 
         }
     }
@@ -148,9 +157,14 @@ public class add_Advertisements extends AppCompatActivity {
                 startActivity(wo4);
                 return true;
 
+            case R.id.del_participant:
+                Intent wo6 = new Intent(add_Advertisements.this, admin_del_registered_user.class);
+                startActivity(wo6);
+                return true;
+
             case R.id.exit:
-                finish();
-                System.exit(0);
+                Intent wo5 = new Intent(add_Advertisements.this, adminLogin.class);
+                startActivity(wo5);
                 return true;
 
             default:
@@ -158,5 +172,4 @@ public class add_Advertisements extends AppCompatActivity {
         }
     }
     ////////////////////////////////////MENU////////////////////////////////////////////////////////
-
 }

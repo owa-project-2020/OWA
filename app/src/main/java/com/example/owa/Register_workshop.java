@@ -1,44 +1,34 @@
 package com.example.owa;
 
 import android.app.DatePickerDialog;
-import android.content.ContentResolver;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
 public class Register_workshop extends AppCompatActivity {
 
-    Uri FilePathUri;
+    //Uri FilePathUri;
     StorageReference storageReference;
     DatabaseReference databaseReference, newRef, myRef;
     FirebaseDatabase fd;
@@ -47,8 +37,8 @@ public class Register_workshop extends AppCompatActivity {
     //long maxid=000;//for autoincrement
     String WorkshopName, Workshopstrt, Workshopend, Workshopdate, WorkshopRoom, WorkshopFee, WorkshopAge, WorkshopSeats, WorkshopCategory;
     Button btnbrowse, btnupload;
-    EditText txtdata, workName, workstrtTime, workendTime, workDate, workRoom, workFee, workAge, workSeats, workCat;
-    ImageView imgview;
+    EditText workName, workstrtTime, workendTime, workDate, workRoom, workFee, workAge, workSeats, workCat;
+    //ImageView imgview;
     workshopsView wv;
     //CalendarView ;
     Calendar myCalendar = Calendar.getInstance();
@@ -59,19 +49,19 @@ public class Register_workshop extends AppCompatActivity {
         setContentView(R.layout.activity_register_workshop);
 
         fd = FirebaseDatabase.getInstance();
-        myRef = fd.getReference("WorkShops Details");
+        //myRef = fd.getReference("WorkShops Details");
 
 //Calendaer
 
 
-        storageReference = FirebaseStorage.getInstance().getReference("Images");
+        //storageReference = FirebaseStorage.getInstance().getReference("Images");
         //databaseReference = FirebaseDatabase.getInstance().getReference().child("Workshops Images").push();
-        newRef = FirebaseDatabase.getInstance().getReference().child("Workshops Images").push();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("WorkShops Details").push();
 
         btnbrowse = findViewById(R.id.btnbrowse);
         btnupload = findViewById(R.id.btnupload);
-        txtdata = findViewById(R.id.txtdata);
-        imgview = findViewById(R.id.image_view);
+        //txtdata = findViewById(R.id.txtdata);
+        //imgview = findViewById(R.id.image_view);
 
         workName = findViewById(R.id.et_wname);
         workCat = findViewById(R.id.et_category);
@@ -84,7 +74,7 @@ public class Register_workshop extends AppCompatActivity {
         workSeats = findViewById(R.id.et_wSeats);
         wv = new workshopsView();
 
-        btnbrowse.setOnClickListener(new View.OnClickListener() {
+        /*btnbrowse.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Intent intent = new Intent();
@@ -92,7 +82,7 @@ public class Register_workshop extends AppCompatActivity {
                         intent.setAction(Intent.ACTION_GET_CONTENT);
                         startActivityForResult(Intent.createChooser(intent, "Select Image"), Image_Request_Code);
                     }
-                });
+                });*/
 
         btnupload.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -119,13 +109,11 @@ public class Register_workshop extends AppCompatActivity {
                 wv.setWage(workAge.getText().toString().trim());
                 wv.setwNoSeats(workSeats.getText().toString().trim());
 
-                myRef = fd.getReference();
-                newRef.setValue(wv);
-                /*DatabaseReference newRef = ref.child("Person").push();
-                newRef.setValue(person);*/
+                newRef = fd.getReference();
+                databaseReference.setValue(wv);
 
                 UploadWorkInfo();
-                UploadImage();
+                //UploadImage();
 
             }
         });
@@ -148,8 +136,6 @@ public class Register_workshop extends AppCompatActivity {
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
-
-
     }
 
     private void updateLabel() {
@@ -175,7 +161,6 @@ public class Register_workshop extends AppCompatActivity {
                         flag = 1;
                         break;
                     }
-
                 }
             }
 
@@ -186,8 +171,8 @@ public class Register_workshop extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    //@Override
+    /*protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -202,18 +187,17 @@ public class Register_workshop extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
-    }
+    }*/
 
-    public String GetFileExtension(Uri uri) {
-
+    /*public String GetFileExtension(Uri uri) {
         ContentResolver contentResolver = getContentResolver();
         MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
         return mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(uri));
 
-    }
+    }*/
 
 
-    public void UploadImage() {
+    /*public void UploadImage() {
 
         if (FilePathUri != null) {
 
@@ -234,7 +218,7 @@ public class Register_workshop extends AppCompatActivity {
             Toast.makeText(Register_workshop.this, "Please Select Image or Add Image Name", Toast.LENGTH_LONG).show();
 
         }
-    }
+    }*/
 
     /////////////////////////////MENU////////////////////////////////////////////////////////////////
     @Override

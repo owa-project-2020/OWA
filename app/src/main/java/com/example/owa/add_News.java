@@ -43,7 +43,7 @@ public class add_News extends AppCompatActivity {
     FirebaseDatabase fd;
     DatabaseReference databaseReference, newRef;
     int Image_Request_Code = 7;
-    long maxid = 000;//for autoincrement
+    //long maxid = 000;//for autoincrement
     String article, Ndate, Ntitle, Ncategory;
     Button btnbrowse, btnupload;
     EditText category, newsdate, newsTitle, news;
@@ -96,9 +96,6 @@ public class add_News extends AppCompatActivity {
                 nv.setArticle(news.getText().toString().trim());
                 nv.setCategory(category.getText().toString().trim());
 
-
-                databaseReference = fd.getReference();
-                newRef.setValue(nv);
                 UploadImage();
                 UploadNews();
 
