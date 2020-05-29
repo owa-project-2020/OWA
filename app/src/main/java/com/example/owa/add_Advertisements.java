@@ -47,7 +47,6 @@ public class add_Advertisements extends AppCompatActivity {
         setContentView(R.layout.activity_add__advertisements);
 
         fd = FirebaseDatabase.getInstance();
-        //newRef = fd.getReference("News Details");
 
         storageReference = FirebaseStorage.getInstance().getReference("Advertisementds Images");
         databaseReference = FirebaseDatabase.getInstance().getReference().child("ADS").push();
@@ -112,7 +111,7 @@ public class add_Advertisements extends AppCompatActivity {
 
                     String TempImageName = category.getText().toString().trim();
 
-                    Toast.makeText(getApplicationContext(), "News Uploaded Successfully ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Advertisements Uploaded Successfully ", Toast.LENGTH_LONG).show();
                     @SuppressWarnings("VisibleForTests")
                     uploadinfo imageUploadInfo = new uploadinfo(TempImageName, taskSnapshot.getUploadSessionUri().toString());
                     String ImageUploadId = databaseReference.push().getKey();
