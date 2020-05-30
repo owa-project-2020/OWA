@@ -21,9 +21,7 @@ public class access extends AppCompatActivity {
         this.setTitle("User Access");
 
         Button news = findViewById(R.id.news);
-        Button photo = findViewById(R.id.gallery);
-        Button services = findViewById(R.id.services);
-        Button help = findViewById(R.id.help);
+        Button help = findViewById(R.id.helps);
 
         news.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -32,22 +30,13 @@ public class access extends AppCompatActivity {
                 startActivity(n);
             }
         });
-
-        photo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent n = new Intent(access.this, gallery.class);
-                startActivity(n);
-            }
-        });
-        help.setOnClickListener(new View.OnClickListener() {
+        /*help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent n = new Intent(access.this, helpGuide.class);
                 startActivity(n);
             }
-        });
-
+        });*/
     }
 
     /////////////////////////////MENU////////////////////////////////////////////////////////////////

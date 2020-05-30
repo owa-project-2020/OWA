@@ -25,5 +25,11 @@
         android:title="Feedback"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/location"
+        android:icon="@drawable/register"
+        android:title="Find us"
+        app:showAsAction="never" />
+
 
 </menu>

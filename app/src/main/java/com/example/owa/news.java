@@ -1,65 +1,64 @@
 package com.example.owa;
 
-import android.app.DatePickerDialog;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.DatePicker;
-import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Locale;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class news extends AppCompatActivity {
 
-    final Calendar mycalendar = Calendar.getInstance();
-    EditText from = findViewById(R.id.et_from);
-    final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+    RecyclerView adver_rv;
+    NewsAdapter NAdapter;
 
-        @Override
-        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-            mycalendar.set(Calendar.YEAR, year);
-            mycalendar.set(Calendar.MONTH, monthOfYear);
-            mycalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-            updateLabel();
-        }
+    List<uploadinfo> mUploads;
 
-    };
-    EditText to = findViewById(R.id.et_to);
+    DatabaseReference reference;
+    //FirebaseDatabase fdb;
+    StorageReference mStorage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news2);
 
+        adver_rv = findViewById(R.id.rv3);
+        adver_rv.setHasFixedSize(true);
+        adver_rv.setLayoutManager(new LinearLayoutManager(this));
 
-        from.setOnClickListener(new View.OnClickListener() {
+        mUploads = new ArrayList<>();
+        mStorage = FirebaseStorage.getInstance().getReference("News_Images");
+        reference = FirebaseDatabase.getInstance().getReference("News Details");
+
+        reference.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onClick(View v) {
-                new DatePickerDialog(news.this, date, mycalendar.get(Calendar.YEAR), mycalendar.get(Calendar.MONTH),
-                        mycalendar.get(Calendar.DAY_OF_MONTH)).show();
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                    uploadinfo upload = postSnapshot.getValue(uploadinfo.class);
+                    mUploads.add(upload);
+                }
+                NAdapter = new NewsAdapter(mUploads, news.this);
+                adver_rv.setAdapter(NAdapter);
+            }
 
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast.makeText(news.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
-        to.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                new DatePickerDialog(news.this, date, mycalendar.get(Calendar.YEAR), mycalendar.get(Calendar.MONTH),
-                        mycalendar.get(Calendar.DAY_OF_MONTH)).show();
-            }
-        });
-
-    }
-
-    private void updateLabel() {
-
-        String myFormat = "dd/MM/yy"; //In which you need put here
-        SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.UK);
-
-        from.setText(sdf.format(mycalendar.getTime()));
 
     }
 }

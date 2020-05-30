@@ -27,7 +27,6 @@ public class view_Ads extends AppCompatActivity {
     EditText search;
     int flag;
     ArrayList<uploadinfo> mUploads;
-    ArrayList<String> adsList;
 
     DatabaseReference reference;
     //FirebaseDatabase fdb;
@@ -86,7 +85,6 @@ public class view_Ads extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     private void search(String s) {

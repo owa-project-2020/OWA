@@ -1,6 +1,8 @@
 package com.example.owa;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -34,22 +36,22 @@ public class Workshop extends AppCompatActivity {
 
         find = findViewById(R.id.worksearch);
         rv = findViewById(R.id.rv1);
-        //rv.setLayoutManager(new LinearLayoutManager(this));
+        rv.setLayoutManager(new LinearLayoutManager(this));
         list = new ArrayList<workshopsView>();
         fdb = FirebaseDatabase.getInstance();
-        reference = fdb.getReference("Workshops Images");
+        reference = fdb.getReference("WorkShops Details");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                //list = new ArrayList<workshopsView>();
+                list = new ArrayList<workshopsView>();
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     workshopsView p = dataSnapshot1.getValue(workshopsView.class);
                     list.add(p);
 
                 }
-                /*adp= new workshopAdapter(list, Workshop.this);
-                rv.setAdapter(adp);*/
+                adp = new workshopAdapter(list, Workshop.this);
+                rv.setAdapter(adp);
                 adp.notifyDataSetChanged();
             }
 
@@ -63,7 +65,7 @@ public class Workshop extends AppCompatActivity {
         adp = new workshopAdapter(list, R.layout.workshop_layout);
         rv.setAdapter(adp);
 
-        /*find.addTextChangedListener(new TextWatcher() {
+        find.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -77,47 +79,27 @@ public class Workshop extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
-                if(!s.toString().isEmpty())
-                {
+                if (!s.toString().isEmpty()) {
                     search(s.toString());
+                } else {
+                    adp.update(list);
                 }
-                else
-                {
-                    search("");
-                }
-            }
-        });*/
-
-    }
-    /*private void search(String s) {
-
-        final Query query = reference.orderByChild("area").startAt(s).endAt(s + "\uf8ff");
-        //
-
-        query.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                if(dataSnapshot.hasChildren())
-                {
-                    list.clear();
-                    for(DataSnapshot dss : dataSnapshot.getChildren())
-                    {
-                        final  workshopsView l = dss.getValue(workshopsView.class);
-                        list.add(l);
-                    }
-
-                    workshopAdapter mm = new workshopAdapter(list, R.layout.workshop_layout);
-                    rv.setAdapter(mm);
-                    mm.notifyDataSetChanged();
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
             }
         });
 
-    }*/
+    }
+
+    private void search(String s) {
+
+
+        ArrayList<workshopsView> temp = new ArrayList<>();
+        for (workshopsView u : list) {
+            if (u.getWorkName().toLowerCase().contains(s.toLowerCase())) {
+                temp.add(u);
+            }
+        }
+        adp.update(temp);
+
+
+    }
 }

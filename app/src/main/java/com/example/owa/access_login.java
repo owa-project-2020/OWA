@@ -11,8 +11,6 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 public class access_login extends AppCompatActivity {
 
     @Override
@@ -23,9 +21,8 @@ public class access_login extends AppCompatActivity {
         this.setTitle("User Access");
 
         Button news = findViewById(R.id.news);
-        Button photo = findViewById(R.id.gallery);
         Button services = findViewById(R.id.services);
-        Button help = findViewById(R.id.help);
+        Button help = findViewById(R.id.helps);
 
         news.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,13 +38,7 @@ public class access_login extends AppCompatActivity {
                 startActivity(n);
             }
         });
-        photo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent n = new Intent(access_login.this, gallery.class);
-                startActivity(n);
-            }
-        });
+
         help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,9 +66,8 @@ public class access_login extends AppCompatActivity {
                 return true;
 
             case R.id.logout:
-                logout();/*
                 Intent logut=new Intent(access_login.this,access.class);
-                startActivity(logut);*/
+                startActivity(logut);
                 return true;
 
             case R.id.feed:
@@ -88,19 +78,15 @@ public class access_login extends AppCompatActivity {
                 startActivity(Intent.createChooser(it, "Choose Mail App"));
                 return true;
 
+            case R.id.location:
+                Intent map = new Intent(access_login.this, Location.class);
+                startActivity(map);
+                return true;
+
 
             default:
                 return super.onOptionsItemSelected(item);
         }
-    }
-
-    ////////////////////////////////////MENU////////////////////////////////////////////////////////
-    private void logout() {
-
-        FirebaseAuth.getInstance().signOut();
-        Intent intent = new Intent(access_login.this, access.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(intent);
     }
 
 }

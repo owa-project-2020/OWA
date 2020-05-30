@@ -53,7 +53,7 @@ public class Admin_page extends AppCompatActivity {
         modify.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent n = new Intent(Admin_page.this, update_workshop.class);
+                Intent n = new Intent(Admin_page.this, Workshop.class);
                 startActivity(n);
             }
         });

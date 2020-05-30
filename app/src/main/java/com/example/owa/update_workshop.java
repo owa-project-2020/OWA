@@ -54,7 +54,7 @@ public class update_workshop extends AppCompatActivity {
 
 
         fd = FirebaseDatabase.getInstance();
-        databaseReference = fd.getReference("Workshops Images");
+        databaseReference = fd.getReference("WorkShops Details");
 
         Bundle b = getIntent().getExtras();
 

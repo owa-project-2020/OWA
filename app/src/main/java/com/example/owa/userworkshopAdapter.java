@@ -22,6 +22,10 @@ public class userworkshopAdapter extends RecyclerView.Adapter<userworkshopAdapte
         context = c;
     }
 
+    public userworkshopAdapter(ArrayList<workshopsView> list, int workshop_layout) {
+    }
+
+
     @NonNull
     @Override
     public userworkshopAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -45,6 +49,11 @@ public class userworkshopAdapter extends RecyclerView.Adapter<userworkshopAdapte
             return 0;
         else
             return workList.size();
+    }
+
+    public void update(ArrayList<workshopsView> temp) {
+        workList = temp;
+        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

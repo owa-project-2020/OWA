@@ -22,7 +22,7 @@ public class services extends AppCompatActivity {
         viewadv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent n = new Intent(services.this, Viewadv.class);
+                Intent n = new Intent(services.this, view_Ads.class);
                 startActivity(n);
             }
         });

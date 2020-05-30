@@ -24,7 +24,6 @@ class uploadinfo {
     public String getImageName() {
         return imageName;
     }
-
     public String getImageURL() {
         return imageURL;
     }

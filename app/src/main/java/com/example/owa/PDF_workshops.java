@@ -54,7 +54,7 @@ public class PDF_workshops extends AppCompatActivity {
         list_workshop = findViewById(R.id.Workshops_list);
 
         fdb = FirebaseDatabase.getInstance();
-        myRef = fdb.getReference().child("Workshops Images");
+        myRef = fdb.getReference().child("WorkShops Details");
 
         list_workshop.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +72,7 @@ public class PDF_workshops extends AppCompatActivity {
                         for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                             //workName,workCategory,wfee,wdate;
                             String x = "-----------------------------------------------------------------------------------------------------------------\n";
-                            rep += dataSnapshot1.child("workName").getValue() + "               |               " + dataSnapshot1.child("workCategory").getValue() + "            |         " + dataSnapshot1.child("wfee").getValue() + "              |         " + dataSnapshot1.child("wdate").getValue() + "|\n" + x;//body
+                            rep += dataSnapshot1.child("workName").getValue() + "   |  " + dataSnapshot1.child("workCategory").getValue() + "  |   " + dataSnapshot1.child("wfee").getValue() + "   |    " + dataSnapshot1.child("wdate").getValue() + "|\n" + x;//body
                             rep += "-----------------------------------------------------------------------------------------------------------------\n";
 
                         }

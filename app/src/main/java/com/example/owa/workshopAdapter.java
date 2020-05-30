@@ -51,6 +51,12 @@ public class workshopAdapter extends RecyclerView.Adapter<workshopAdapter.ViewHo
             return workList.size();
     }
 
+    public void update(ArrayList<workshopsView> temp) {
+        workList = temp;
+        notifyDataSetChanged();
+    }
+
+
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView workshopName, workshopDdate, workshopstime, workshopntime;
