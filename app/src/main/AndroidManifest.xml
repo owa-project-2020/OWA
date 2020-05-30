@@ -2,12 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.owa">
 
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <uses-feature android:name="android.hardware.sensor.stepcounter" />
     <uses-feature android:name="android.hardware.sensor.stepdetector" />
@@ -24,7 +29,23 @@
         android:roundIcon="@drawable/profile"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Location"></activity>
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps"></activity>
+        <activity android:name=".Location" />
         <activity android:name=".admin_del_registered_user" />
         <activity android:name=".feedback" />
         <activity android:name=".user_view_workshop" />
@@ -33,28 +54,29 @@
         <activity android:name=".registred_workshops"> <!-- THIS IS TO VIEW REGISTRED WORKSHOPS FOR ADMIN ITS CONNECTED WITH admin_del_registered_user -->
 
         </activity>
-        <activity android:name=".view_Ads"></activity>
-        <activity android:name=".add_Advertisements"></activity>
+        <activity android:name=".view_Ads" />
+        <activity android:name=".add_Advertisements" />
         <activity android:name=".update_workshop" />
-        <activity android:name=".add_News"></activity>
+        <activity android:name=".add_News" />
         <activity android:name=".adminLogin" />
-        <activity android:name=".adminRegister"></activity>
-        <activity android:name=".Workshop"></activity>
+        <activity android:name=".adminRegister" />
+        <activity android:name=".Workshop" />
         <activity android:name=".Register_workshop" />
         <activity android:name=".news" />
-        <activity android:name=".Admin_page"></activity>
+        <activity android:name=".Admin_page" />
         <activity android:name=".helpGuide" />
         <activity android:name=".reset_password" />
         <activity android:name=".Forget_Password" />
         <activity android:name=".access">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".access_login" />
         <activity android:name=".registration" />
-        <activity android:name=".login"></activity>
+        <activity android:name=".login" />
         <activity android:name=".services" />
     </application>
 

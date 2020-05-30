@@ -79,7 +79,7 @@ public class access_login extends AppCompatActivity {
                 return true;
 
             case R.id.location:
-                Intent map = new Intent(access_login.this, Location.class);
+                Intent map = new Intent(access_login.this, MapsActivity.class);
                 startActivity(map);
                 return true;
 
