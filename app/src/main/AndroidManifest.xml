@@ -42,10 +42,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
-        <activity android:name=".Location" />
+        <activity android:name=".MapsActivity"></activity>
         <activity android:name=".admin_del_registered_user" />
         <activity android:name=".feedback" />
         <activity android:name=".user_view_workshop" />

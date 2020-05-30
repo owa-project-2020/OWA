@@ -44,7 +44,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(Amerat).title("Omani Women Association - Amerat"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(Amerat));
 
-        /*BitmapDescriptor icon= BitmapDescriptorFactory.fromResource(R.drawable.common_google_signin_btn_icon_dark_focused);
-        mMap.addMarker(new MarkerOptions().position(Amerat).title("Omani Women Association - Amerat").icon(icon));*/
     }
 }

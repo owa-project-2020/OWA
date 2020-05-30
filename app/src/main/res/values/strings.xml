@@ -2,18 +2,5 @@
     <string name="app_name">OWA</string>
     <string name="fogetpassword"><a href="Forget_Password">Click here if you Forgot Your Password</a> </string>
 
-    <string-array name="name">
-        <item>aaaa</item>
-        <item>bbbb</item>
-        <item>cccc</item>
-        <item>dddd</item>
-    </string-array>
-
-    <string-array name="advname">
-        <item>aaaa</item>
-        <item>bbbb</item>
-        <item>cccc</item>
-        <item>dddd</item>
-    </string-array>
-    <string name="title_activity_maps">Map</string>
+    <!--<string name="title_activity_maps">Map</string>-->
 </resources>
