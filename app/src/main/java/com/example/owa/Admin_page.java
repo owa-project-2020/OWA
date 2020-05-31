@@ -17,7 +17,7 @@ public class Admin_page extends AppCompatActivity {
 
         this.setTitle("Admin Access");
 
-        Button workshop = findViewById(R.id.addworkshop);
+        final Button workshop = findViewById(R.id.addworkshop);
         Button news = findViewById(R.id.add_news);
         Button ads = findViewById(R.id.addadvertisements);
         Button modify = findViewById(R.id.updateordelete);

@@ -48,7 +48,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="7dp"
             android:hint="Start time"
-            android:inputType="time"
+            android:inputType="none"
             android:textAlignment="center"
             android:textColor="@color/violit" />
 
@@ -58,7 +58,7 @@
             android:layout_height="50dp"
             android:layout_marginTop="7dp"
             android:hint="end time"
-            android:inputType="textPersonName"
+            android:inputType="none"
             android:textAlignment="center"
             android:textColor="@color/violit" />
 
@@ -136,20 +136,20 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/btnbrowse"
+                android:id="@+id/CANCEL"
+                android:layout_width="150dp"
+                android:layout_height="58dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/cancelbtn" />
+
+            <Button
+                android:id="@+id/upload"
                 android:layout_width="150dp"
                 android:layout_height="58dp"
                 android:layout_gravity="center"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/addbtn" />
-
-            <Button
-                android:id="@+id/btnupload"
-                android:layout_width="150dp"
-                android:layout_height="58dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:background="@drawable/upload" />
         </LinearLayout>
 
     </LinearLayout>
