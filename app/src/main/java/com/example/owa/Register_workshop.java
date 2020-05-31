@@ -105,9 +105,7 @@ public class Register_workshop extends AppCompatActivity {
 
                 if (WorkshopName.isEmpty())
                     Toast.makeText(Register_workshop.this, "Write workshop Name", Toast.LENGTH_SHORT).show();
-                /*else if (!(WorkshopName.matches(wname)))
-                    Toast.makeText(Register_workshop.this, "Workshop Name should be contains letters only", Toast.LENGTH_SHORT).show();
-*/
+
                 else if (WorkshopCategory.isEmpty())
                     Toast.makeText(Register_workshop.this, "Write workshop Category", Toast.LENGTH_SHORT).show();
                 else if (!(WorkshopCategory.matches(wname)))

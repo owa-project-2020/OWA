@@ -57,10 +57,7 @@
 
         </activity>
         <activity android:name=".view_Ads">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+
         </activity>
         <activity android:name=".add_Advertisements" />
         <activity android:name=".update_workshop" />

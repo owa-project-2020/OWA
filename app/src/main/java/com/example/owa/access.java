@@ -16,7 +16,7 @@ public class access extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_access);
+        setContentView(R.layout.activity_access_login);
 
         this.setTitle("User Access");
 
