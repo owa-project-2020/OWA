@@ -28,7 +28,7 @@ public class userRegiseterToWorkshop extends AppCompatActivity {
 
     //CalendarView ;
     Calendar myCalendar = Calendar.getInstance();
-    Calendar Dob = Calendar.getInstance();
+    Calendar today = Calendar.getInstance();
 
     FirebaseDatabase fd, db;
     DatabaseReference myRef, workReference, newRef;
@@ -41,7 +41,7 @@ public class userRegiseterToWorkshop extends AppCompatActivity {
     userRegisterWorkshop ur;
     workshopsView wv;
 
-    int flag, age;
+    int flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,7 +131,9 @@ public class userRegiseterToWorkshop extends AppCompatActivity {
 
     private void calculateAge() {
         //Formulla to caculate age
-        age = myCalendar.get(Calendar.YEAR) - Dob.get(Calendar.YEAR);
+
+        int age = myCalendar.get(Calendar.YEAR) - today.get(Calendar.YEAR);
+
         if (age >= 15) {
             Toast.makeText(userRegiseterToWorkshop.this, "Your Age must be grater 15", Toast.LENGTH_SHORT).show();
         } else {
@@ -155,7 +157,7 @@ public class userRegiseterToWorkshop extends AppCompatActivity {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     ur = ds.getValue(userRegisterWorkshop.class);
                     if (ur.user_email.isEmpty()) {
-                        Toast.makeText(userRegiseterToWorkshop.this, "Please Enter your e-mail Date!!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(userRegiseterToWorkshop.this, "Please Enter your e-mail !!", Toast.LENGTH_SHORT).show();
                         flag = 1;
                         Intent i = new Intent(userRegiseterToWorkshop.this, payment.class);
                         i.putExtra("user_email", e4.getText().toString());

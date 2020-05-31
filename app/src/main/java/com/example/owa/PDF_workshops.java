@@ -70,7 +70,7 @@ public class PDF_workshops extends AppCompatActivity {
                     public void onDataChange(DataSnapshot dataSnapshot) {
 
                         for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                            //workName,workCategory,wfee,wdate;
+
                             String x = "-----------------------------------------------------------------------------------------------------------------\n";
                             rep += dataSnapshot1.child("workName").getValue() + "   |  " + dataSnapshot1.child("workCategory").getValue() + "  |   " + dataSnapshot1.child("wfee").getValue() + "   |    " + dataSnapshot1.child("wdate").getValue() + "|\n" + x;//body
                             rep += "-----------------------------------------------------------------------------------------------------------------\n";

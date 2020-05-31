@@ -54,12 +54,12 @@ public class PDF_registered_workshops extends AppCompatActivity {
         list_workshop = findViewById(R.id.Workshops_list);
 
         fdb = FirebaseDatabase.getInstance();
-        myRef = fdb.getReference().child("Workshops Images");//Registered workshops //TODO..
+        myRef = fdb.getReference().child("registered workshops");//Registered workshops
 
         list_workshop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                a = "                                                           W O R K S H O P S   L I S T                                     \n\n\n";
+                a = "                                                   R E G I S T R E D   W O R K S H O P S   L I S T                                     \n\n\n";
                 a = "-----------------------------------------------------------------------------------------------------------------\n";
                 a += "      Name            |                 Category               |               e-mail                            \n";//header
                 a += "-----------------------------------------------------------------------------------------------------------------\n";
@@ -70,9 +70,9 @@ public class PDF_registered_workshops extends AppCompatActivity {
                     public void onDataChange(DataSnapshot dataSnapshot) {
 
                         for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                            //workName,workCategory,wfee,wdate;
+
                             String x = "-----------------------------------------------------------------------------------------------------------------\n";
-                            //TODO..           rep+= dataSnapshot1.child("workName").getValue()+"               |               "+ dataSnapshot1.child("workCategory").getValue()+"            |         "+ dataSnapshot1.child("wfee").getValue()+"              |         "+ dataSnapshot1.child("wdate").getValue()+"|\n"+x;//body
+                            rep += dataSnapshot1.child("user_Name").getValue() + "     |      " + dataSnapshot1.child("user_email").getValue() + "     |    " + dataSnapshot1.child("workshop_name").getValue() + "|\n" + x;//body
                             rep += "-----------------------------------------------------------------------------------------------------------------\n";
 
                         }
@@ -90,15 +90,12 @@ public class PDF_registered_workshops extends AppCompatActivity {
 
                         }
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
 
                     }
                 });
             }
-
-
         });
 
     }
