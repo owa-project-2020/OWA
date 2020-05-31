@@ -132,7 +132,9 @@ public class userRegiseterToWorkshop extends AppCompatActivity {
     private void calculateAge() {
         //Formulla to caculate age
 
-        int age = myCalendar.get(Calendar.YEAR) - today.get(Calendar.YEAR);
+        int yearOfBirth = Integer.parseInt(e5.getText().toString().substring(6, 10));
+
+        int age = myCalendar.get(Calendar.YEAR) - yearOfBirth;
 
         if (age >= 15) {
             Toast.makeText(userRegiseterToWorkshop.this, "Your Age must be grater 15", Toast.LENGTH_SHORT).show();

@@ -46,7 +46,12 @@
         <activity android:name=".admin_del_registered_user" />
         <activity android:name=".feedback" />
         <activity android:name=".user_view_workshop" />
-        <activity android:name=".userRegiseterToWorkshop" />
+        <activity android:name=".userRegiseterToWorkshop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".PDF_workshops">
 
         </activity>
