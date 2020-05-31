@@ -93,11 +93,21 @@ public class Register_workshop extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                WorkshopName = workName.getText().toString().trim();
+                WorkshopCategory = workCat.getText().toString().trim();
+                Workshopstrt = workstrtTime.getText().toString().trim();
+                Workshopend = workendTime.getText().toString().trim();
+                Workshopdate = workDate.getText().toString().trim();
+                WorkshopRoom = workRoom.getText().toString().trim();
+                WorkshopFee = workFee.getText().toString().trim();
+                WorkshopAge = workAge.getText().toString().trim();
+                WorkshopSeats = workSeats.getText().toString().trim();
+
                 if (WorkshopName.isEmpty())
                     Toast.makeText(Register_workshop.this, "Write workshop Name", Toast.LENGTH_SHORT).show();
-                else if (!(WorkshopName.matches(wname)))
+                /*else if (!(WorkshopName.matches(wname)))
                     Toast.makeText(Register_workshop.this, "Workshop Name should be contains letters only", Toast.LENGTH_SHORT).show();
-
+*/
                 else if (WorkshopCategory.isEmpty())
                     Toast.makeText(Register_workshop.this, "Write workshop Category", Toast.LENGTH_SHORT).show();
                 else if (!(WorkshopCategory.matches(wname)))
@@ -121,23 +131,13 @@ public class Register_workshop extends AppCompatActivity {
                 else if (WorkshopFee.isEmpty() && !WorkshopFee.contains("OMR"))
                     Toast.makeText(Register_workshop.this, "Determine the workshop Fee with OMR currency", Toast.LENGTH_SHORT).show();
 
-                if (WorkshopAge.isEmpty())
+                else if (WorkshopAge.isEmpty())
                     Toast.makeText(Register_workshop.this, "Determine the workshop Age", Toast.LENGTH_SHORT).show();
 
-                if (WorkshopSeats.isEmpty() || WorkshopSeats.equals("0"))
+                else if (WorkshopSeats.isEmpty() || WorkshopSeats.equals("0"))
                     Toast.makeText(Register_workshop.this, "Determine Number of Seats", Toast.LENGTH_SHORT).show();
 
                 else {
-                    WorkshopName = workName.getText().toString().trim();
-                    WorkshopCategory = workCat.getText().toString().trim();
-                    Workshopstrt = workstrtTime.getText().toString().trim();
-                    Workshopend = workendTime.getText().toString().trim();
-                    Workshopdate = workDate.getText().toString().trim();
-                    WorkshopRoom = workRoom.getText().toString().trim();
-                    WorkshopFee = workFee.getText().toString().trim();
-                    WorkshopAge = workAge.getText().toString().trim();
-                    WorkshopSeats = workSeats.getText().toString().trim();
-
                     wv.setWorkName(workName.getText().toString().trim());
                     wv.setWorkCategory(workCat.getText().toString().trim());
                     wv.setWstartTime(workstrtTime.getText().toString().trim());
