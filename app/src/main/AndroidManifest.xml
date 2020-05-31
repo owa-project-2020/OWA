@@ -47,11 +47,21 @@
         <activity android:name=".feedback" />
         <activity android:name=".user_view_workshop" />
         <activity android:name=".userRegiseterToWorkshop" />
-        <activity android:name=".PDF_workshops" />
+        <activity android:name=".PDF_workshops">
+
+        </activity>
+        <activity android:name=".PDF_registered_workshops">
+
+        </activity>
         <activity android:name=".registred_workshops"> <!-- THIS IS TO VIEW REGISTRED WORKSHOPS FOR ADMIN ITS CONNECTED WITH admin_del_registered_user -->
 
         </activity>
-        <activity android:name=".view_Ads" />
+        <activity android:name=".view_Ads">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".add_Advertisements" />
         <activity android:name=".update_workshop" />
         <activity android:name=".add_News" />

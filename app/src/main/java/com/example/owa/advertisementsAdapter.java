@@ -44,7 +44,7 @@ public class advertisementsAdapter extends RecyclerView.Adapter<advertisementsAd
 
         holder.imgDetails.setText(upin.getImageName());
         Picasso.get()
-                .load(upin.imageURL)
+                .load(upin.getImageURL())
                 .fit()
                 .centerCrop()
                 .into(holder.img);

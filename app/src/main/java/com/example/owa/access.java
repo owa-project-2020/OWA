@@ -30,13 +30,13 @@ public class access extends AppCompatActivity {
                 startActivity(n);
             }
         });
-        /*help.setOnClickListener(new View.OnClickListener() {
+        help.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent n = new Intent(access.this, helpGuide.class);
                 startActivity(n);
             }
-        });*/
+        });
     }
 
     /////////////////////////////MENU////////////////////////////////////////////////////////////////

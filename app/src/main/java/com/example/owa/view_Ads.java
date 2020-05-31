@@ -44,7 +44,7 @@ public class view_Ads extends AppCompatActivity {
 
         mUploads = new ArrayList<>();
         mStorage = FirebaseStorage.getInstance().getReference("Advertisements Images");
-        reference = FirebaseDatabase.getInstance().getReference("Ads");
+        reference = FirebaseDatabase.getInstance().getReference("ADS");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
