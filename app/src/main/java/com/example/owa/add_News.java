@@ -57,10 +57,10 @@ public class add_News extends AppCompatActivity {
         setContentView(R.layout.activity_add__news);
 
         fd = FirebaseDatabase.getInstance();
-        //databaseReference = fd.getReference("News Details");
+        newRef = fd.getReference("News Details");
 
-        storageReference = FirebaseStorage.getInstance().getReference("news Images");
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("News Details").push();
+        storageReference = FirebaseStorage.getInstance().getReference("News_Images");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("News").push();
 
         btnbrowse = findViewById(R.id.btnbrowse);
         btnupload = findViewById(R.id.btnupload);
@@ -91,14 +91,10 @@ public class add_News extends AppCompatActivity {
                 article = news.getText().toString().trim();
                 Ncategory = category.getText().toString().trim();
 
-
                 nv.setDate(newsdate.getText().toString().trim());
                 nv.setTitle(newsTitle.getText().toString().trim());
                 nv.setArticle(news.getText().toString().trim());
                 nv.setCategory(category.getText().toString().trim());
-
-                newRef = fd.getReference();
-                databaseReference.setValue(nv);
 
                 UploadImage();
                 UploadNews();
@@ -133,7 +129,9 @@ public class add_News extends AppCompatActivity {
                 int flag = 0;
                 newsView nv = new newsView();
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
+
                     nv = ds.getValue(newsView.class);
+
                     Toast.makeText(add_News.this, "News Successfully added", Toast.LENGTH_SHORT).show();
                     flag = 1;
                     break;
