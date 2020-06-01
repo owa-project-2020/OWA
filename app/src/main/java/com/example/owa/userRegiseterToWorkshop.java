@@ -131,20 +131,21 @@ public class userRegiseterToWorkshop extends AppCompatActivity {
 
     private void calculateAge() {
         //Formulla to caculate age
-
-        int yearOfBirth = Integer.parseInt(e5.getText().toString().substring(6, 10));
-
+        int yearOfBirth = Integer.parseInt(e4.getText().toString().substring(7, 10));
         int age = myCalendar.get(Calendar.YEAR) - yearOfBirth;
-
-        if (age >= 15) {
+        Toast.makeText(userRegiseterToWorkshop.this, "age = " + age, Toast.LENGTH_SHORT).show();
+        if (age <= 15) {
             Toast.makeText(userRegiseterToWorkshop.this, "Your Age must be grater 15", Toast.LENGTH_SHORT).show();
         } else {
-            uploadUserRegister();
+            /*Intent i = new Intent(userRegiseterToWorkshop.this, payment.class);
+            i.putExtra("user_email", e4.getText().toString());
+            startActivity(i);
+            uploadUserRegister();*/
         }
     }
 
     private void updateLabel() {
-        String myFormat = "dd/MM/yy"; //In which you need put here
+        String myFormat = "dd/MM/yyyy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
         e4.setText(sdf.format(myCalendar.getTime()));
     }
@@ -161,11 +162,9 @@ public class userRegiseterToWorkshop extends AppCompatActivity {
                     if (ur.user_email.isEmpty()) {
                         Toast.makeText(userRegiseterToWorkshop.this, "Please Enter your e-mail !!", Toast.LENGTH_SHORT).show();
                         flag = 1;
-                        Intent i = new Intent(userRegiseterToWorkshop.this, payment.class);
-                        i.putExtra("user_email", e4.getText().toString());
-                        startActivity(i);
                         break;
                     }
+
                 }
             }
 
