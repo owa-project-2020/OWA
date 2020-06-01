@@ -1,6 +1,5 @@
 package com.example.owa;
 
-import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,37 +17,30 @@ import java.util.ArrayList;
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
 
     public ArrayList<uploadinfo> newsList;
-    public ArrayList<newsView> dataList;
-    public Context context;
 
-    public NewsAdapter(ArrayList<uploadinfo> news, Context c, ArrayList<newsView> dat) {
-        newsList = news;
-        context = c;
-        dataList = dat;
-    }
 
-    public NewsAdapter(ArrayList<uploadinfo> mUploads, news news) {
+    public NewsAdapter(ArrayList<uploadinfo> mUploads) {
+        newsList = mUploads;
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.news_layout, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.news_layout, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         uploadinfo upin = newsList.get(position);
-        newsView unv = dataList.get(position);
+        // newsView unv = dataList.get(position);
         holder.imgDetails.setText(upin.getImageName());
         Picasso.get()
-                .load(upin.imageURL)
+                .load(upin.getImageURL())
                 .fit()
                 .centerCrop()
                 .into(holder.img);
-        holder.tittle.setText(dataList.get(position).getTitle());
-        holder.article.setText(dataList.get(position).getArticle());
+
 
     }
 
