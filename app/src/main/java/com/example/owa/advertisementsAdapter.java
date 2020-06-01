@@ -33,9 +33,7 @@ public class advertisementsAdapter extends RecyclerView.Adapter<advertisementsAd
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.ads_item, parent, false);
-        //ViewHolder vh =new ViewHolder(view);
         return new ViewHolder(view);
-        //return vh;
     }
 
     @Override
@@ -61,10 +59,6 @@ public class advertisementsAdapter extends RecyclerView.Adapter<advertisementsAd
             return adsList.size();
     }
 
-    /*public long getItemid(int position) {
-        return position;
-    }*/
-
     public void update(ArrayList<uploadinfo> items) {
         adsList = items;
         notifyDataSetChanged();
@@ -85,7 +79,6 @@ public class advertisementsAdapter extends RecyclerView.Adapter<advertisementsAd
         @Override
         public void onClick(View v) {
             Intent i = new Intent(v.getContext(), uploadinfo.class);
-
             i.putExtra("imageName", imgDetails.getText().toString());
             v.getContext().startActivity(i);
         }

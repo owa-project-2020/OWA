@@ -16,15 +16,13 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class news extends AppCompatActivity {
 
-    RecyclerView adver_rv;
+    RecyclerView news_rv;
     NewsAdapter NAdapter;
-
-    List<uploadinfo> mUploads;
-
+    int flag;
+    ArrayList<uploadinfo> mUploads;
     DatabaseReference reference;
     //FirebaseDatabase fdb;
     StorageReference mStorage;
@@ -32,15 +30,15 @@ public class news extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_news2);
+        setContentView(R.layout.activity_news);
 
-        adver_rv = findViewById(R.id.rv3);
-        adver_rv.setHasFixedSize(true);
-        adver_rv.setLayoutManager(new LinearLayoutManager(this));
+        news_rv = findViewById(R.id.rv3);
+        news_rv.setHasFixedSize(true);
+        news_rv.setLayoutManager(new LinearLayoutManager(this));
 
         mUploads = new ArrayList<>();
         mStorage = FirebaseStorage.getInstance().getReference("News_Images");
-        reference = FirebaseDatabase.getInstance().getReference("News Details");
+        reference = FirebaseDatabase.getInstance().getReference("News");
 
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -50,7 +48,8 @@ public class news extends AppCompatActivity {
                     mUploads.add(upload);
                 }
                 NAdapter = new NewsAdapter(mUploads, news.this);
-                adver_rv.setAdapter(NAdapter);
+                news_rv.setAdapter(NAdapter);
+                NAdapter.notifyDataSetChanged();
             }
 
             @Override

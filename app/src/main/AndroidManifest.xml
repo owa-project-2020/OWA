@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.owa">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -29,7 +28,7 @@
         android:roundIcon="@drawable/profile"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".fullNews"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -42,25 +41,17 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".MapsActivity"></activity>
+        <activity android:name=".MapsActivity" />
         <activity android:name=".admin_del_registered_user" />
         <activity android:name=".feedback" />
         <activity android:name=".user_view_workshop" />
-        <activity android:name=".userRegiseterToWorkshop">
-
-        </activity>
-        <activity android:name=".PDF_workshops">
-
-        </activity>
-        <activity android:name=".PDF_registered_workshops">
-
-        </activity>
+        <activity android:name=".userRegiseterToWorkshop"></activity>
+        <activity android:name=".PDF_workshops"></activity>
+        <activity android:name=".PDF_registered_workshops"></activity>
         <activity android:name=".registred_workshops"> <!-- THIS IS TO VIEW REGISTRED WORKSHOPS FOR ADMIN ITS CONNECTED WITH admin_del_registered_user -->
 
         </activity>
-        <activity android:name=".view_Ads">
-
-        </activity>
+        <activity android:name=".view_Ads"></activity>
         <activity android:name=".add_Advertisements" />
         <activity android:name=".update_workshop" />
         <activity android:name=".add_News" />
@@ -76,6 +67,7 @@
         <activity android:name=".access">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
