@@ -47,7 +47,7 @@ public class news extends AppCompatActivity {
                     uploadinfo upload = postSnapshot.getValue(uploadinfo.class);
                     mUploads.add(upload);
                 }
-                NAdapter = new NewsAdapter(mUploads, news.this);
+                //  NAdapter = new NewsAdapter(mUploads, news.this);
                 news_rv.setAdapter(NAdapter);
                 NAdapter.notifyDataSetChanged();
             }

@@ -45,7 +45,13 @@
         <activity android:name=".admin_del_registered_user" />
         <activity android:name=".feedback" />
         <activity android:name=".user_view_workshop" />
-        <activity android:name=".userRegiseterToWorkshop"></activity>
+        <activity android:name=".userRegiseterToWorkshop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".PDF_workshops"></activity>
         <activity android:name=".PDF_registered_workshops"></activity>
         <activity android:name=".registred_workshops"> <!-- THIS IS TO VIEW REGISTRED WORKSHOPS FOR ADMIN ITS CONNECTED WITH admin_del_registered_user -->
@@ -55,7 +61,7 @@
         <activity android:name=".add_Advertisements" />
         <activity android:name=".update_workshop" />
         <activity android:name=".add_News" />
-        <activity android:name=".adminLogin" />
+        <activity android:name=".adminLogin"></activity>
         <activity android:name=".adminRegister" />
         <activity android:name=".Workshop" />
         <activity android:name=".Register_workshop" />
@@ -73,7 +79,13 @@
         </activity>
         <activity android:name=".access_login" />
         <activity android:name=".registration" />
-        <activity android:name=".login" />
+        <activity android:name=".login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".services" />
         <activity android:name=".payment" />
     </application>
