@@ -57,9 +57,9 @@ public class add_News extends AppCompatActivity {
         setContentView(R.layout.activity_add__news);
 
         fd = FirebaseDatabase.getInstance();
-        newRef = fd.getReference("News Details");
+        //newRef = fd.getReference("News Details");
 
-        storageReference = FirebaseStorage.getInstance().getReference("News_Images");
+        storageReference = FirebaseStorage.getInstance().getReference("news Images");
         databaseReference = FirebaseDatabase.getInstance().getReference().child("News").push();
 
         btnbrowse = findViewById(R.id.btnbrowse);

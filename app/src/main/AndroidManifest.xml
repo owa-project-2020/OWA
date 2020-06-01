@@ -46,11 +46,7 @@
         <activity android:name=".feedback" />
         <activity android:name=".user_view_workshop" />
         <activity android:name=".userRegiseterToWorkshop">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".PDF_workshops"></activity>
         <activity android:name=".PDF_registered_workshops"></activity>
@@ -80,11 +76,7 @@
         <activity android:name=".access_login" />
         <activity android:name=".registration" />
         <activity android:name=".login">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".services" />
         <activity android:name=".payment" />

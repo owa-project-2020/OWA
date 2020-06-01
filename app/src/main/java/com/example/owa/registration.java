@@ -108,6 +108,7 @@ public class registration extends AppCompatActivity {
                                     Toast.makeText(registration.this, "Registered!", Toast.LENGTH_SHORT).show();
                                     Intent gotologin = new Intent(registration.this, login.class);
                                     startActivity(gotologin);
+
                                 } else {
                                     Toast.makeText(registration.this, "Fail  Register!", Toast.LENGTH_SHORT).show();
                                 }

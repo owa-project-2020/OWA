@@ -66,7 +66,7 @@ public class userRegiseterToWorkshop extends AppCompatActivity {
         Bundle b = getIntent().getExtras();
         e1.setText(b.getString("workName"));
         e2.setText(b.getString("wdate"));
-        e6.setText(b.getString("wfee"));
+        e6.setText(b.getString("wfee") + " OMR");
 
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -135,14 +135,14 @@ public class userRegiseterToWorkshop extends AppCompatActivity {
 
         Calendar c = Calendar.getInstance();
         int age = c.get(Calendar.YEAR) - yearOfBirth;
-        Toast.makeText(userRegiseterToWorkshop.this, c.get(Calendar.YEAR) + " - " + yearOfBirth + " = " + age, Toast.LENGTH_SHORT).show();
-        if (age <= 15) {
+        // Toast.makeText(userRegiseterToWorkshop.this, c.get(Calendar.YEAR) + " - " + yearOfBirth + " = " + age, Toast.LENGTH_SHORT).show();
+        if (age < 15) {
             Toast.makeText(userRegiseterToWorkshop.this, "Your Age must be grater 15", Toast.LENGTH_SHORT).show();
         } else {
-            /*Intent i = new Intent(userRegiseterToWorkshop.this, payment.class);
-            i.putExtra("user_email", e4.getText().toString());
+            Intent i = new Intent(userRegiseterToWorkshop.this, payment.class);
+            i.putExtra("user_email", e5.getText().toString());
             startActivity(i);
-            uploadUserRegister();*/
+            uploadUserRegister();
         }
     }
 

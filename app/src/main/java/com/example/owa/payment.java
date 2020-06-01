@@ -48,30 +48,34 @@ public class payment extends AppCompatActivity {
 
                 myref.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
+
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if (found.equals(true)) {
-                            final String u_mail = et1.getText().toString();
 
-                            //mail
-                            //Getting content for email
-                            String email = u_mail;
-                            String subject = "Proof of payment";
-                            String message = " Dear user..\n"
-                                    + "You have payed for a workshop " + wv.getWorkName() + " Successfully \n"
-                                    + "Please show your civil ID card in time of need\n" +
-                                    "Have a good time";
+                        for (DataSnapshot d : dataSnapshot.getChildren()) {
+                            userRegisterWorkshop mu = d.getValue(userRegisterWorkshop.class);
+                            if (mu.getUser_email().equals(et1.getText().toString())) {
+                                found = true;
+                                final String u_mail = et1.getText().toString();
+                                //mail
+                                //Getting content for email
+                                String email = u_mail;
+                                String subject = "Proof of payment";
+                                String message = " Dear user..\n"
+                                        + "You have payed for a workshop " + wv.getWorkName() + " Successfully \n"
+                                        + "Please show your civil ID card in time of need\n" +
+                                        "Have a good time";
 
-                            //Creating SendMail object
-                            GMailSender gsm = new GMailSender(payment.this, email, subject, message);
-                            gsm.execute();
-                            //end
-
-                        } else {
-
-                            Toast.makeText(payment.this, "Email Not Found", Toast.LENGTH_SHORT).show();
+                                //Creating SendMail object
+                                GMailSender gsm = new GMailSender(payment.this, email, subject, message);
+                                gsm.execute();
+                                //end
+                            } else {
+                                Toast.makeText(payment.this, "Email Not Found", Toast.LENGTH_SHORT).show();
+                            }
+                            break;
+                        }
 
                         }
-                    }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -85,6 +89,7 @@ public class payment extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent cancel = new Intent(payment.this, user_view_workshop.class);
+                startActivity(cancel);
             }
         });
     }

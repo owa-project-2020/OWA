@@ -70,7 +70,7 @@
             android:textAllCaps="false"
             android:textColor="@color/colorAccent" />
 
-        <Button
+        <!--<Button
             android:id="@+id/btn_adminRegister"
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -79,7 +79,7 @@
             android:background="@color/white"
             android:text="Register"
             android:textAllCaps="false"
-            android:textColor="@color/grey" />
+            android:textColor="@color/grey" />-->
 
     </LinearLayout>
 

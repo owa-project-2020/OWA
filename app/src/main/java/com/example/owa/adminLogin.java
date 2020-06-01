@@ -25,7 +25,7 @@ public class adminLogin extends AppCompatActivity {
     int flag;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_login);
 
@@ -36,7 +36,7 @@ public class adminLogin extends AppCompatActivity {
         final EditText admin_password = findViewById(R.id.et_adminpass);
         Button btnlogin = findViewById(R.id.btn_adminlogin);
         Button forgot = findViewById(R.id.txt_admin_4getpass);
-        Button adminreg = findViewById(R.id.btn_adminRegister);
+        //Button adminreg = findViewById(R.id.btn_adminRegister);
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,11 +78,19 @@ public class adminLogin extends AppCompatActivity {
                 }
             }
         });
-        adminreg.setOnClickListener(new View.OnClickListener() {
+        /*adminreg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent adminReg = new Intent(adminLogin.this, adminRegister.class);
                 startActivity(adminReg);
+            }
+        });*/
+
+        forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent f = new Intent(adminLogin.this, Forget_Password.class);
+                startActivity(f);
             }
         });
     }
