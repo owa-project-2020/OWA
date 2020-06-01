@@ -49,7 +49,7 @@ public class userRegiseterToWorkshop extends AppCompatActivity {
         setContentView(R.layout.activity_userregisetertoworkshop);
 
         fd = FirebaseDatabase.getInstance();
-        newRef = FirebaseDatabase.getInstance().getReference().child("registered workshops").push();
+        newRef = FirebaseDatabase.getInstance().getReference().child("registered workshops");
         db = FirebaseDatabase.getInstance();
         workReference = db.getReference("Workshops Images");
 

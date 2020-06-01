@@ -63,7 +63,7 @@ public class Register_workshop extends AppCompatActivity {
 
         //storageReference = FirebaseStorage.getInstance().getReference("Images");
         //databaseReference = FirebaseDatabase.getInstance().getReference().child("Workshops Images").push();
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("WorkShops Details").push();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("WorkShops Details");
 
         upload = findViewById(R.id.upload);
         cancel = findViewById(R.id.CANCEL);

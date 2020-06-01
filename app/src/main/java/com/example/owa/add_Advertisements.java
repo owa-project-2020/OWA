@@ -49,7 +49,7 @@ public class add_Advertisements extends AppCompatActivity {
         fd = FirebaseDatabase.getInstance();
 
         storageReference = FirebaseStorage.getInstance().getReference("Advertisementds Images");
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("ADS").push();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("ADS");
 
         btnbrowse = findViewById(R.id.btnbrowse);
         btnupload = findViewById(R.id.btnupload);

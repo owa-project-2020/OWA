@@ -72,8 +72,8 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         public void onClick(View v) {
             Intent i = new Intent(v.getContext(), fullNews.class);
             i.putExtra("imageName", imgDetails.getText().toString());
-            i.putExtra("title", tittle.getText().toString());
-            i.putExtra("article", tittle.getText().toString());
+            i.putExtra("title", imgDetails.getText().toString());
+            i.putExtra("article", imgDetails.getText().toString());
 
             v.getContext().startActivity(i);
         }
