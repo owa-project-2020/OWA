@@ -62,11 +62,6 @@
         <activity android:name=".Workshop" />
         <activity android:name=".Register_workshop" />
         <activity android:name=".news">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Admin_page" />
         <activity android:name=".helpGuide" />

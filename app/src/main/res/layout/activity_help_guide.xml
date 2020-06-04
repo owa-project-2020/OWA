@@ -24,16 +24,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center">
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/enq"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="200dp"
             android:gravity="center"
             android:background="@drawable/inquiry"
             android:textAllCaps="false" />
+
+        <VideoView
+            android:id="@+id/videoView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="50dp"
+            android:onClick="videoplay" />
     </LinearLayout>
 
 </RelativeLayout>
