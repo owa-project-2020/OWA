@@ -103,7 +103,7 @@ public class Register_workshop extends AppCompatActivity {
                 WorkshopAge = workAge.getText().toString().trim();
                 WorkshopSeats = workSeats.getText().toString().trim();
 
-                if (WorkshopName.isEmpty())
+                /*if (WorkshopName.isEmpty())
                     Toast.makeText(Register_workshop.this, "Write workshop Name", Toast.LENGTH_SHORT).show();
 
                 else if (WorkshopCategory.isEmpty())
@@ -133,9 +133,9 @@ public class Register_workshop extends AppCompatActivity {
                     Toast.makeText(Register_workshop.this, "Determine the workshop Age", Toast.LENGTH_SHORT).show();
 
                 else if (WorkshopSeats.isEmpty() || WorkshopSeats.equals("0"))
-                    Toast.makeText(Register_workshop.this, "Determine Number of Seats", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Register_workshop.this, "Determine Number of Seats", Toast.LENGTH_SHORT).show();*/
 
-                else {
+                //else {
                     wv.setWorkName(workName.getText().toString().trim());
                     wv.setWorkCategory(workCat.getText().toString().trim());
                     wv.setWstartTime(workstrtTime.getText().toString().trim());
@@ -151,20 +151,9 @@ public class Register_workshop extends AppCompatActivity {
 
                     UploadWorkInfo();
                     updateTime();
-                }
+                //}
             }
         });
-        /*final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
-            @Override
-            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-
-                myCalendar.set(Calendar.YEAR, year);
-                myCalendar.set(Calendar.MONTH, monthOfYear);
-                myCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                updateLabel();
-            }
-
-        };*/
         workDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -184,7 +173,7 @@ public class Register_workshop extends AppCompatActivity {
                         try {
                             date1 = sdf.parse(year + "/" + (monthOfYear + 1) + "/" + dayOfMonth);
                             Date date2 = sdf.parse(mYear + "/" + (mMonth + 1) + "/" + mDay);
-                            if (date1.compareTo(date2) >= 0) {
+                            if (date1.compareTo(date2) > 0) {
                                 workDate.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
                                 SimpleDateFormat simpledateformat = new SimpleDateFormat("EEEE");
                                 Date date = new Date(year, monthOfYear, dayOfMonth - 1);

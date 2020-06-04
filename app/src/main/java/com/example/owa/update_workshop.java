@@ -39,7 +39,6 @@ public class update_workshop extends AppCompatActivity {
 
     ArrayList<workshopsView> alist;
 
-    //ArrayList<String>list;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
