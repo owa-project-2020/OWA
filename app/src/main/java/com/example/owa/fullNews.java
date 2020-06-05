@@ -20,7 +20,6 @@ public class fullNews extends AppCompatActivity {
     FirebaseDatabase fdb;
     DatabaseReference databaseReference;
     ArrayList<newsView> newViewList;
-    NewsAdapter nadp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

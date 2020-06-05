@@ -56,9 +56,9 @@ public class news extends AppCompatActivity {
                 Toast.makeText(news.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-        news_rv.setLayoutManager(new LinearLayoutManager(this));
+        /*news_rv.setLayoutManager(new LinearLayoutManager(this));
         NAdapter = new NewsAdapter(mUploads, R.layout.news_layout);
-        news_rv.setAdapter(NAdapter);
+        news_rv.setAdapter(NAdapter);*/
 
     }
 }
