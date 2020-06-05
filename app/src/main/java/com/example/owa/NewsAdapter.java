@@ -23,6 +23,9 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         newsList = mUploads;
     }
 
+    public NewsAdapter(ArrayList<uploadinfo> mUploads, int news_layout) {
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

@@ -24,7 +24,6 @@ public class news extends AppCompatActivity {
     int flag;
     ArrayList<uploadinfo> mUploads;
     DatabaseReference reference;
-    //FirebaseDatabase fdb;
     StorageReference mStorage;
 
     @Override
@@ -57,7 +56,9 @@ public class news extends AppCompatActivity {
                 Toast.makeText(news.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-
+        news_rv.setLayoutManager(new LinearLayoutManager(this));
+        NAdapter = new NewsAdapter(mUploads, R.layout.news_layout);
+        news_rv.setAdapter(NAdapter);
 
     }
 }
