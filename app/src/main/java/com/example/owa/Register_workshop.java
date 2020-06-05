@@ -63,7 +63,7 @@ public class Register_workshop extends AppCompatActivity {
 
         //storageReference = FirebaseStorage.getInstance().getReference("Images");
         //databaseReference = FirebaseDatabase.getInstance().getReference().child("Workshops Images").push();
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("WorkShops Details");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("WorkShops Details").push();
 
         upload = findViewById(R.id.upload);
         cancel = findViewById(R.id.CANCEL);
@@ -103,7 +103,7 @@ public class Register_workshop extends AppCompatActivity {
                 WorkshopAge = workAge.getText().toString().trim();
                 WorkshopSeats = workSeats.getText().toString().trim();
 
-                /*if (WorkshopName.isEmpty())
+                if (WorkshopName.isEmpty())
                     Toast.makeText(Register_workshop.this, "Write workshop Name", Toast.LENGTH_SHORT).show();
 
                 else if (WorkshopCategory.isEmpty())
@@ -133,9 +133,9 @@ public class Register_workshop extends AppCompatActivity {
                     Toast.makeText(Register_workshop.this, "Determine the workshop Age", Toast.LENGTH_SHORT).show();
 
                 else if (WorkshopSeats.isEmpty() || WorkshopSeats.equals("0"))
-                    Toast.makeText(Register_workshop.this, "Determine Number of Seats", Toast.LENGTH_SHORT).show();*/
+                    Toast.makeText(Register_workshop.this, "Determine Number of Seats", Toast.LENGTH_SHORT).show();
 
-                //else {
+                else {
                     wv.setWorkName(workName.getText().toString().trim());
                     wv.setWorkCategory(workCat.getText().toString().trim());
                     wv.setWstartTime(workstrtTime.getText().toString().trim());
@@ -151,7 +151,7 @@ public class Register_workshop extends AppCompatActivity {
 
                     UploadWorkInfo();
                     updateTime();
-                //}
+                }
             }
         });
         workDate.setOnClickListener(new View.OnClickListener() {

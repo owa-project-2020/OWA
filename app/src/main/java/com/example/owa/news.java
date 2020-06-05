@@ -37,7 +37,7 @@ public class news extends AppCompatActivity {
         news_rv.setLayoutManager(new LinearLayoutManager(this));
 
         mUploads = new ArrayList<>();
-        mStorage = FirebaseStorage.getInstance().getReference("News_Images");
+        mStorage = FirebaseStorage.getInstance().getReference("news Images");
         reference = FirebaseDatabase.getInstance().getReference("News");
 
         reference.addValueEventListener(new ValueEventListener() {

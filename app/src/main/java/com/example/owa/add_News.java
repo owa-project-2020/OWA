@@ -61,6 +61,7 @@ public class add_News extends AppCompatActivity {
 
         storageReference = FirebaseStorage.getInstance().getReference("news Images");
         databaseReference = FirebaseDatabase.getInstance().getReference().child("News");
+        //databaseReference = FirebaseDatabase.getInstance().getReference().child("News").push();
 
         btnbrowse = findViewById(R.id.btnbrowse);
         btnupload = findViewById(R.id.btnupload);
@@ -96,6 +97,8 @@ public class add_News extends AppCompatActivity {
                 nv.setArticle(news.getText().toString().trim());
                 nv.setCategory(category.getText().toString().trim());
 
+                /*newRef=fd.getReference();
+                databaseReference.setValue(nv);*/
                 UploadImage();
                 UploadNews();
 
